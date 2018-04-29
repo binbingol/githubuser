@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="obj" type="com.githubuser.xavier.githubuser.object.UserObject"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground">
+
+        <!-- Profile image of the given user -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <!-- Name, Staff Label (if have) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="start|center_vertical"
+            android:orientation="vertical">
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{obj.login}"/>
+
+            <!-- Label -->
+            <include
+                android:id="@+id/label"
+                layout="@layout/item_stafflabel"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
